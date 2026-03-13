@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>6. Inventário de Dons - Mulher de Valor</title>
+    <style>
+        :root { --primaria: #5d4037; --destaque: #c5a059; --fundo: #fdfaf6; --texto: #2c2c2c; --acento: #8d6e63; }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        body { background-color: var(--fundo); color: var(--texto); font-family: 'Optima', 'Candara', 'Segoe UI', serif; overflow-x: hidden; display: flex; flex-direction: column; align-items: center; }
+        
+        .acessibilidade-bar { background: #fff; width: 100%; padding: 15px 0; display: flex; justify-content: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
+        .btn-audio { background: none; border: 1px solid var(--destaque); padding: 10px 25px; cursor: pointer; color: var(--primaria); letter-spacing: 2px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+
+        .container { width: 100%; max-width: 900px; background: #fff; margin: 20px auto; padding: 60px 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border-top: 6px solid var(--primaria); }
+        
+        h1 { font-size: 1.7rem; letter-spacing: 3px; color: var(--primaria); text-align: center; text-transform: uppercase; margin-bottom: 10px; font-weight: 300; line-height: 1.2; }
+        .subtitulo { font-size: 0.95rem; color: var(--acento); text-align: center; font-style: italic; margin-bottom: 50px; display: block; letter-spacing: 1px; }
+
+        h2 { font-size: 1.25rem; color: var(--primaria); margin-top: 45px; border-bottom: 1px solid #f2f2f2; padding-bottom: 10px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
+        .conteudo { font-size: 1.15rem; text-align: justify; line-height: 1.9; color: #333; }
+        p { margin-bottom: 25px; }
+
+        .citacao-luxo { background: #fdfaf6; border-left: 3px solid var(--destaque); padding: 30px; margin: 40px 0; font-style: italic; font-size: 1.1rem; }
+        .citacao-luxo a { color: var(--primaria); text-decoration: none; font-weight: bold; border-bottom: 1px solid var(--destaque); }
+
+        .insight-card { background: #fff; border: 1px solid #f0f0f0; padding: 30px; margin: 40px 0; border-radius: 2px; border-left: 4px solid var(--primaria); font-size: 1.1rem; }
+        .link-wiki { color: var(--acento); text-decoration: none; border-bottom: 1px dotted var(--acento); }
+
+        footer { width: 100%; padding: 40px 0; text-align: center; border-top: 1px solid #eee; font-size: 0.85rem; color: #555; background: #fff; line-height: 1.6; }
+
+        .nav { display: flex; justify-content: space-between; margin-top: 60px; width: 100%; }
+        .btn-nav { color: var(--acento); text-decoration: none; font-size: 0.85rem; border: 1px solid #eee; padding: 12px 20px; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        
+        @media (max-width: 600px) { .container { padding: 40px 20px; } h1 { font-size: 1.4rem; } }
+    </style>
+</head>
+<body>
+
+    <div class="acessibilidade-bar">
+        <button id="btnOuvir" class="btn-audio" onclick="toggleAudio()">OUVIR NARRATIVA</button>
+    </div>
+
+    <div class="container">
+        <article id="artigo">
+            <h1>INVENTÁRIO DE DONS</h1>
+            <span class="subtitulo">Mapeando suas habilidades naturais e espirituais.</span>
+            
+            <div class="conteudo">
+                <p>Muitas mulheres confundem humildade com autodepreciação. Elas acreditam que reconhecer um talento é um ato de soberba, quando, na verdade, enterrar um dom é uma ofensa ao Doador. Um inventário de dons não é uma lista de vaidades, é um mapeamento de ferramentas de serviço. Você não recebeu habilidades para brilhar sozinha, mas para iluminar o caminho de outros.</p>
+
+                <h2>I. O Perigo de Enterrar o Talento</h2>
+                <p>Na Parábola dos Talentos (<a href="https://pt.wikipedia.org/wiki/Par%C3%A1bola_dos_Talentos" target="_blank" class="link-wiki">Mateus 25</a>), o servo que enterrou o que recebeu não foi punido por maldade, mas por medo e negligência. O medo de errar paralisa o dom. A Mulher de Valor entende que sua competência não vem de si mesma, mas da capacitação que o Espírito concede. Identificar o seu dom é o primeiro passo para sair da mediocridade.</p>
+
+                <div class="citacao-luxo">
+                    "Temos, porém, diferentes dons, segundo a graça que nos é dada..." <br>
+                    <a href="https://www.bibliaonline.com.br/arc/rm/12/6" target="_blank">— Romanos 12:6</a>
+                </div>
+
+                <h2>II. Bezaleel e a Estética do Sagrado</h2>
+                <p>Freqüentemente, achamos que "dons" são apenas pregar ou cantar. Mas a Bíblia destaca <strong>Bezaleel</strong> (Êxodo 31), um homem cheio do Espírito de Deus para... desenhar, inventar e trabalhar com ouro e prata. Deus se importa com a sua habilidade manual, administrativa, culinária ou estética. O seu talento "natural" é, muitas vezes, o seu maior canal de influência espiritual.</p>
+                
+                <p>Se você tem facilidade em organizar, em aconselhar ou em criar ambientes acolhedores, isso é um <a href="https://pt.wikipedia.org/wiki/Carisma" target="_blank" class="link-wiki">Carisma</a> — uma graça dada para o bem comum. No contexto familiar, o seu dom pode ser a liga que mantém as gerações unidas. Não subestime a "habilidade comum"; nela reside o seu diferencial extraordinário.</p>
+
+                <div class="insight-card">
+                    <strong>Despertar Criativo:</strong> O que as pessoas costumam elogiar em você sem que você faça esforço? O que você faz que faz o tempo "parar"? Geralmente, o seu maior dom está escondido naquilo que você considera óbvio, mas que para os outros é difícil. Mapear isso é o que a <a href="https://pt.wikipedia.org/wiki/Psicologia_do_trabalho" target="_blank" class="link-wiki">Psicologia do Trabalho</a> chama de encontrar o seu "Estado de Fluxo".
+                </div>
+
+                <h2>III. O Dom como Armadura de Guerra</h2>
+                <p>Débora não era apenas uma juíza; ela era uma estrategista. O dom dela trouxe paz à nação por quarenta anos. Quando você descobre para o que foi feita, as críticas param de te ferir, pois você está ocupada demais executando o seu chamado. O inventário de dons é a sua armadura: ele te protege da comparação e te foca na missão.</p>
+
+                <div class="citacao-luxo">
+                    "Cada um administre aos outros o dom como o recebeu, como bons despenseiros da multiforme graça de Deus." <br>
+                    <a href="https://www.bibliaonline.com.br/arc/1pe/4/10" target="_blank">— 1 Pedro 4:10</a>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a href="6.html" class="btn-nav">ANTERIOR</a>
+                <a href="8.html" class="btn-nav">PRÓXIMO</a>
+            </nav>
+        </article>
+    </div>
+
+    <footer>
+        <strong>Faculdade Teológica AVANCE</strong><br>
+        "Ultrapassando limites!" | Itanhangá-MT | Século 21<br>
+        Válido em todo território nacional - Lei 9.394/96
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
+    <script>
+        let falando = false;
+        let synthesis = window.speechSynthesis;
+        function toggleAudio() {
+            if (!falando) {
+                const texto = document.getElementById('artigo').innerText;
+                const msg = new SpeechSynthesisUtterance(texto);
+                msg.lang = 'pt-BR';
+                msg.onend = () => resetBtn();
+                synthesis.speak(msg);
+                document.getElementById('btnOuvir').innerHTML = "PARAR LEITURA";
+                falando = true;
+            } else { synthesis.cancel(); resetBtn(); }
+        }
+        function resetBtn() {
+            document.getElementById('btnOuvir').innerHTML = "OUVIR NARRATIVA";
+            falando = false;
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>6. Inventário de Dons - Mulher de Valor</title>
+    <style>
+        :root { --primaria: #5d4037; --destaque: #c5a059; --fundo: #fdfaf6; --texto: #2c2c2c; --acento: #8d6e63; }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        body { background-color: var(--fundo); color: var(--texto); font-family: 'Optima', 'Candara', 'Segoe UI', serif; overflow-x: hidden; display: flex; flex-direction: column; align-items: center; }
+        
+        .acessibilidade-bar { background: #fff; width: 100%; padding: 15px 0; display: flex; justify-content: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
+        .btn-audio { background: none; border: 1px solid var(--destaque); padding: 10px 25px; cursor: pointer; color: var(--primaria); letter-spacing: 2px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+
+        .container { width: 100%; max-width: 900px; background: #fff; margin: 20px auto; padding: 60px 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border-top: 6px solid var(--primaria); }
+        
+        h1 { font-size: 1.7rem; letter-spacing: 3px; color: var(--primaria); text-align: center; text-transform: uppercase; margin-bottom: 10px; font-weight: 300; line-height: 1.2; }
+        .subtitulo { font-size: 0.95rem; color: var(--acento); text-align: center; font-style: italic; margin-bottom: 50px; display: block; letter-spacing: 1px; }
+
+        h2 { font-size: 1.25rem; color: var(--primaria); margin-top: 45px; border-bottom: 1px solid #f2f2f2; padding-bottom: 10px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
+        .conteudo { font-size: 1.15rem; text-align: justify; line-height: 1.9; color: #333; }
+        p { margin-bottom: 25px; }
+
+        .citacao-luxo { background: #fdfaf6; border-left: 3px solid var(--destaque); padding: 30px; margin: 40px 0; font-style: italic; font-size: 1.1rem; }
+        .citacao-luxo a { color: var(--primaria); text-decoration: none; font-weight: bold; border-bottom: 1px solid var(--destaque); }
+
+        .insight-card { background: #fff; border: 1px solid #f0f0f0; padding: 30px; margin: 40px 0; border-radius: 2px; border-left: 4px solid var(--primaria); font-size: 1.1rem; }
+        .link-wiki { color: var(--acento); text-decoration: none; border-bottom: 1px dotted var(--acento); }
+
+        footer { width: 100%; padding: 40px 0; text-align: center; border-top: 1px solid #eee; font-size: 0.85rem; color: #555; background: #fff; line-height: 1.6; }
+
+        .nav { display: flex; justify-content: space-between; margin-top: 60px; width: 100%; }
+        .btn-nav { color: var(--acento); text-decoration: none; font-size: 0.85rem; border: 1px solid #eee; padding: 12px 20px; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        
+        @media (max-width: 600px) { .container { padding: 40px 20px; } h1 { font-size: 1.4rem; } }
+    </style>
+</head>
+<body>
+
+    <div class="acessibilidade-bar">
+        <button id="btnOuvir" class="btn-audio" onclick="toggleAudio()">OUVIR NARRATIVA</button>
+    </div>
+
+    <div class="container">
+        <article id="artigo">
+            <h1>INVENTÁRIO DE DONS</h1>
+            <span class="subtitulo">Mapeando suas habilidades naturais e espirituais.</span>
+            
+            <div class="conteudo">
+                <p>Muitas mulheres confundem humildade com autodepreciação. Elas acreditam que reconhecer um talento é um ato de soberba, quando, na verdade, enterrar um dom é uma ofensa ao Doador. Um inventário de dons não é uma lista de vaidades, é um mapeamento de ferramentas de serviço. Você não recebeu habilidades para brilhar sozinha, mas para iluminar o caminho de outros.</p>
+
+                <h2>I. O Perigo de Enterrar o Talento</h2>
+                <p>Na Parábola dos Talentos (<a href="https://pt.wikipedia.org/wiki/Par%C3%A1bola_dos_Talentos" target="_blank" class="link-wiki">Mateus 25</a>), o servo que enterrou o que recebeu não foi punido por maldade, mas por medo e negligência. O medo de errar paralisa o dom. A Mulher de Valor entende que sua competência não vem de si mesma, mas da capacitação que o Espírito concede. Identificar o seu dom é o primeiro passo para sair da mediocridade.</p>
+
+                <div class="citacao-luxo">
+                    "Temos, porém, diferentes dons, segundo a graça que nos é dada..." <br>
+                    <a href="https://www.bibliaonline.com.br/arc/rm/12/6" target="_blank">— Romanos 12:6</a>
+                </div>
+
+                <h2>II. Bezaleel e a Estética do Sagrado</h2>
+                <p>Freqüentemente, achamos que "dons" são apenas pregar ou cantar. Mas a Bíblia destaca <strong>Bezaleel</strong> (Êxodo 31), um homem cheio do Espírito de Deus para... desenhar, inventar e trabalhar com ouro e prata. Deus se importa com a sua habilidade manual, administrativa, culinária ou estética. O seu talento "natural" é, muitas vezes, o seu maior canal de influência espiritual.</p>
+                
+                <p>Se você tem facilidade em organizar, em aconselhar ou em criar ambientes acolhedores, isso é um <a href="https://pt.wikipedia.org/wiki/Carisma" target="_blank" class="link-wiki">Carisma</a> — uma graça dada para o bem comum. No contexto familiar, o seu dom pode ser a liga que mantém as gerações unidas. Não subestime a "habilidade comum"; nela reside o seu diferencial extraordinário.</p>
+
+                <div class="insight-card">
+                    <strong>Despertar Criativo:</strong> O que as pessoas costumam elogiar em você sem que você faça esforço? O que você faz que faz o tempo "parar"? Geralmente, o seu maior dom está escondido naquilo que você considera óbvio, mas que para os outros é difícil. Mapear isso é o que a <a href="https://pt.wikipedia.org/wiki/Psicologia_do_trabalho" target="_blank" class="link-wiki">Psicologia do Trabalho</a> chama de encontrar o seu "Estado de Fluxo".
+                </div>
+
+                <h2>III. O Dom como Armadura de Guerra</h2>
+                <p>Débora não era apenas uma juíza; ela era uma estrategista. O dom dela trouxe paz à nação por quarenta anos. Quando você descobre para o que foi feita, as críticas param de te ferir, pois você está ocupada demais executando o seu chamado. O inventário de dons é a sua armadura: ele te protege da comparação e te foca na missão.</p>
+
+                <div class="citacao-luxo">
+                    "Cada um administre aos outros o dom como o recebeu, como bons despenseiros da multiforme graça de Deus." <br>
+                    <a href="https://www.bibliaonline.com.br/arc/1pe/4/10" target="_blank">— 1 Pedro 4:10</a>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a href="6.html" class="btn-nav">ANTERIOR</a>
+                <a href="8.html" class="btn-nav">PRÓXIMO</a>
+            </nav>
+        </article>
+    </div>
+
+    <footer>
+        <strong>Faculdade Teológica AVANCE</strong><br>
+        "Ultrapassando limites!" | Itanhangá-MT | Século 21<br>
+        Válido em todo território nacional - Lei 9.394/96
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
+    <script>
+        let falando = false;
+        let synthesis = window.speechSynthesis;
+        function toggleAudio() {
+            if (!falando) {
+                const texto = document.getElementById('artigo').innerText;
+                const msg = new SpeechSynthesisUtterance(texto);
+                msg.lang = 'pt-BR';
+                msg.onend = () => resetBtn();
+                synthesis.speak(msg);
+                document.getElementById('btnOuvir').innerHTML = "PARAR LEITURA";
+                falando = true;
+            } else { synthesis.cancel(); resetBtn(); }
+        }
+        function resetBtn() {
+            document.getElementById('btnOuvir').innerHTML = "OUVIR NARRATIVA";
+            falando = false;
+        }
+    </script>
+</body>
+</html>

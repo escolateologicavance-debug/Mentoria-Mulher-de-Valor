@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Mulher de Valor</title>
+    <style>
+        :root {
+            --primaria: #8b5e3c;
+            --destaque: #d4af37;
+            --fundo: #fdfaf6;
+            --texto: #2c2c2c;
+            --suave: #8e8e8e;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--fundo);
+            background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30,50 Q40,20 50,50 T70,50' fill='none' stroke='%23e9e0d5' stroke-width='0.5'/%3E%3C/svg%3E");
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--texto);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            background: white;
+            border-bottom: 3px solid var(--destaque);
+        }
+
+        .boas-vindas { font-size: 1.1rem; color: var(--primaria); font-weight: 500; }
+
+        .container { width: 92%; max-width: 500px; padding: 20px 0; min-height: 70vh; }
+
+        .grid-temas { display: grid; gap: 12px; margin-top: 10px; }
+
+        .card-tema {
+            background: white;
+            border-radius: 12px;
+            padding: 18px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .numero {
+            background: var(--destaque);
+            color: white;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .texto-grupo { display: flex; flex-direction: column; }
+        .titulo-tema { font-size: 1rem; font-weight: 700; color: var(--primaria); text-transform: uppercase; }
+        .subtitulo-tema { font-size: 0.85rem; color: var(--suave); margin-top: 3px; font-style: italic; }
+
+        footer { 
+            width: 100%; 
+            background: #fff; 
+            padding: 30px 0; 
+            margin-top: 40px; 
+            text-align: center; 
+            border-top: 1px solid #eee;
+        }
+
+        .info-legal {
+            font-size: 0.75rem;
+            color: var(--suave);
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .btn-prova {
+            display: inline-block;
+            background: var(--destaque);
+            color: black;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="displayNome" class="boas-vindas">Bem-vinda, Mulher de Valor</div>
+    </header>
+
+    <div class="container">
+        <div class="grid-temas">
+            <a href="2.html" class="card-tema">
+                <div class="numero">1</div>
+                <div class="texto-grupo">
+                    <span class="titulo-tema">O Alicerce (Interior)</span>
+                    <span class="subtitulo-tema">Foco: Desconstrução de rótulos e cura da autoimagem.</span>
+                </div>
+            </a>
+
+            <a href="3.html" class="card-tema"><div class="numero">2</div><div class="texto-grupo"><span class="titulo-tema">A Origem do Valor</span><span class="subtitulo-tema">Diferença entre o que você faz e quem você é.</span></div></a>
+            <a href="4.html" class="card-tema"><div class="numero">3</div><div class="texto-grupo"><span class="titulo-tema">Limpando o Espelho</span><span class="subtitulo-tema">Silenciando as vozes críticas do passado.</span></div></a>
+            <a href="5.html" class="card-tema"><div class="numero">4</div><div class="texto-grupo"><span class="titulo-tema">Crenças de Merecimento</span><span class="subtitulo-tema">Quebrando o ciclo da "síndrome da impostora".</span></div></a>
+            <a href="6.html" class="card-tema"><div class="numero">5</div><div class="texto-grupo"><span class="titulo-tema">O Tanque Emocional</span><span class="subtitulo-tema">Identificando o que esgota sua energia espiritual.</span></div></a>
+            <a href="7.html" class="card-tema"><div class="numero">6</div><div class="texto-grupo"><span class="titulo-tema">Inventário de Dons</span><span class="subtitulo-tema">Mapeando suas habilidades naturais e espirituais.</span></div></a>
+            <a href="8.html" class="card-tema"><div class="numero">7</div><div class="texto-grupo"><span class="titulo-tema">Gestão do Tempo e do Sagrado</span><span class="subtitulo-tema">Priorizando o que é eterno na rotina caótica.</span></div></a>
+            <a href="9.html" class="card-tema"><div class="numero">8</div><div class="texto-grupo"><span class="titulo-tema">Limites Saudáveis</span><span class="subtitulo-tema">A arte de dizer "não" para focar no seu chamado.</span></div></a>
+            <a href="10.html" class="card-tema"><div class="numero">9</div><div class="texto-grupo"><span class="titulo-tema">Visão de Futuro</span><span class="subtitulo-tema">Criando seu mapa de vida para os próximos 5 anos.</span></div></a>
+            <a href="11.html" class="card-tema"><div class="numero">10</div><div class="texto-grupo"><span class="titulo-tema">A Linguagem da Presença</span><span class="subtitulo-tema">Postura e fala que comunicam seus valores.</span></div></a>
+            <a href="12.html" class="card-tema"><div class="numero">11</div><div class="texto-grupo"><span class="titulo-tema">Vestindo a Identidade</span><span class="subtitulo-tema">Rebranding visual: estética que reflete a ética.</span></div></a>
+            <a href="13.html" class="card-tema"><div class="numero">12</div><div class="texto-grupo"><span class="titulo-tema">Legado e Transbordo</span><span class="subtitulo-tema">Conexões de valor e o legado da mentoria.</span></div></a>
+        </div>
+    </div>
+
+    <footer>
+        <a href="perguntas.html" class="btn-prova">FINALIZAR MENTORIA</a>
+        <div class="info-legal">
+            <strong>Faculdade Teológica AVANCE</strong><br>
+            <em>"Ultrapassando limites!"</em><br><br>
+            Válido em todo território nacional conforme o Decreto Presidencial nº 5.154/04 e a Lei nº 9.394/96.<br>
+            <strong>Gilberto Moreira</strong><br>
+            Itanhangá-MT - Brasil - Século 21
+        </div>
+    </footer>
+
+    <script>
+        const nomeSalvo = localStorage.getItem('nomeMulherDeValor');
+        if (nomeSalvo) { document.getElementById('displayNome').innerText = "Bem-vinda, " + nomeSalvo; }
+    </script>
+</body>
+</html>

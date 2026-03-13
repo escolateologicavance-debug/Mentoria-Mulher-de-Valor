@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico e Certificado - Mulher de Valor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root { --primaria: #5d4037; --destaque: #c5a059; --fundo: #fdfaf6; --texto: #2c2c2c; --acento: #8d6e63; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--fundo); color: var(--texto); font-family: 'Optima', serif; padding: 20px; }
+        
+        /* Estilo da Interface de Perguntas */
+        .header-teste { text-align: center; margin-bottom: 40px; }
+        .header-teste h1 { color: var(--primaria); font-size: 1.8rem; letter-spacing: 2px; text-transform: uppercase; }
+        .header-teste p { color: var(--acento); font-style: italic; margin-top: 10px; }
+
+        .secao-pergunta { background: #fff; max-width: 700px; margin: 20px auto; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--destaque); }
+        .pergunta { font-size: 1.15rem; margin-bottom: 20px; color: var(--primaria); font-weight: bold; line-height: 1.4; }
+        .botoes { display: flex; gap: 15px; }
+        .btn-check { padding: 12px 30px; border: 1px solid var(--destaque); background: transparent; color: var(--primaria); cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; border-radius: 25px; min-width: 100px; }
+        .btn-check:hover { background: var(--destaque); color: #fff; }
+        .btn-check.ativo { background: var(--primaria); color: #fff; border-color: var(--primaria); }
+        .feedback { margin-top: 15px; font-style: italic; font-size: 0.95rem; color: var(--acento); display: none; padding: 10px; background: #fdfaf6; border-radius: 5px; }
+
+        .container-final { text-align: center; margin: 50px auto; max-width: 600px; padding: 40px; background: #fff; border-radius: 15px; border: 2px dashed var(--destaque); }
+        .input-nome { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-size: 1.1rem; text-align: center; margin-top: 15px; outline: none; transition: 0.3s; }
+        
+        .btn-gerar { display: block; width: 300px; margin: 30px auto; padding: 20px; background: var(--destaque); color: #fff; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; }
+
+        /* --- ESTILO DO CERTIFICADO (OCULTO NA TELA, FORMATADO PARA O PDF) --- */
+        #area-certificado {
+            position: absolute;
+            left: -9999px; /* Escondido da visualização direta */
+            width: 1122px; /* Largura A4 Paisagem */
+            height: 794px;
+            background: #fff;
+        }
+        .cert-chassi {
+            width: 100%; height: 100%;
+            border: 25px solid var(--primaria);
+            padding: 15px; box-sizing: border-box;
+        }
+        .cert-moldura-interna {
+            border: 3px solid var(--destaque);
+            height: 100%; width: 100%;
+            padding: 60px; text-align: center;
+            display: flex; flex-direction: column;
+            justify-content: space-between; align-items: center;
+            box-sizing: border-box;
+        }
+        .cert-header h1 { font-size: 5rem; letter-spacing: 15px; color: var(--primaria); margin: 0; line-height: 1; }
+        .cert-header .slogan { font-size: 1.5rem; color: var(--destaque); font-style: italic; letter-spacing: 3px; display: block; margin-top: 5px; }
+        
+        .cert-corpo { margin-top: 50px; }
+        .cert-corpo p { font-size: 1.8rem; color: #555; }
+        .nome-aluna { font-size: 3.2rem; color: #1a1a1a; font-family: serif; font-weight: bold; border-bottom: 2px solid #eee; padding: 10px 40px; display: inline-block; margin: 20px 0; }
+        .mentoria-nome { font-size: 2.5rem; color: var(--primaria); font-weight: bold; text-transform: uppercase; margin-top: 10px; }
+
+        .assinaturas { width: 100%; display: flex; justify-content: space-between; margin-top: 60px; padding: 0 60px; }
+        .assinatura-box { width: 350px; border-top: 1.5px solid #333; padding-top: 10px; font-size: 1.2rem; }
+
+        .cert-rodape { font-size: 1rem; color: #777; line-height: 1.4; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-teste">
+        <h1>Diagnóstico de Governo</h1>
+        <p>Responda as 8 chaves para liberar sua certificação</p>
+    </div>
+
+    <div class="secao-pergunta"><div class="pergunta">1. Você consegue aceitar o favor e a prosperidade sem sentir que é uma "impostora"?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'O merecimento é a base bíblica para o transbordo.')">SIM</button><button class="btn-check" onclick="responder(this, 'Lembre-se: Você foi resgatada para reinar.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">2. Você identificou quais são as "válvulas de escape" que drenam sua energia hoje?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'Identificar é o primeiro passo para a blindagem.')">SIM</button><button class="btn-check" onclick="responder(this, 'Revisite a aula sobre o Tanque Emocional.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">3. O seu Kairós (tempo de Deus) tem tido primazia sobre o seu Chronos (rotina)?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'Quem governa o sagrado, governa o tempo.')">SIM</button><button class="btn-check" onclick="responder(this, 'Não deixe o urgente roubar o eterno.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">4. Você é capaz de dizer "não" a demandas externas sem sentir culpa?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'O seu NÃO protege o seu CHAMADO.')">SIM</button><button class="btn-check" onclick="responder(this, 'O medo de desagradar é um cárcere.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">5. Sua estrutura de caráter atual suportaria o peso do seu propósito daqui a 15 anos?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'Edifique a base para suportar o topo.')">SIM</button><button class="btn-check" onclick="responder(this, 'O preparo deve ser proporcional à promessa.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">6. Sua postura comunica a paz de Abigail ou a ansiedade das circunstâncias?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'Sua presença é sua primeira pregação.')">SIM</button><button class="btn-check" onclick="responder(this, 'Cultive o peso espiritual no secreto.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">7. Sua imagem externa (estética) está em harmonia com a mensagem do Reino (ética)?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'A vitrine deve honrar o estoque.')">SIM</button><button class="btn-check" onclick="responder(this, 'Ajuste sua sinalética visual.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">8. Existe hoje alguém sendo levantado através do seu transbordo?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'Sucesso sem sucessor é fracasso.')">SIM</button><button class="btn-check" onclick="responder(this, 'O Mar Morto só recebe; você foi chamada para dar.')">NÃO</button></div><div class="feedback"></div></div>
+    <div class="container-final">
+        <strong style="color: var(--primaria); font-size: 1.2rem;">PARABÉNS PELA JORNADA!</strong><br><br>
+        <p>Insira seu nome completo para o certificado:</p>
+        <input type="text" id="nomeUsuario" class="input-nome" placeholder="Seu Nome Aqui">
+        <button class="btn-gerar" onclick="gerarPDF()">GERAR E BAIXAR CERTIFICADO</button>
+    </div>
+
+    <div id="area-certificado">
+        <div class="cert-chassi">
+            <div class="cert-moldura-interna">
+                <div class="cert-header">
+                    <h1>AVANCE</h1>
+                    <span class="slogan">"Ultrapassando limites!"</span>
+                </div>
+                <div class="cert-corpo">
+                    <p>Certificamos que</p>
+                    <div class="nome-aluna" id="certNome">NOME DA MENTOREADA</div>
+                    <p>concluiu com distinção a Mentoria</p>
+                    <div class="mentoria-nome">MULHER DE VALOR</div>
+                </div>
+                <div class="assinaturas">
+                    <div class="assinatura-box"><strong>Gilberto Moreira</strong><br><span>Diretor Executivo</span></div>
+                    <div class="assinatura-box"><strong id="certNomeAssina">NOME</strong><br><span>Mentoreada</span></div>
+                </div>
+                <div class="cert-rodape">
+                    <strong>Faculdade Teológica AVANCE</strong><br>
+                    Válido em todo território nacional conforme o Decreto Presidencial nº 5.154/04 e a Lei nº 9.394/96.<br>
+                    Itanhangá-MT | Brasil | Século 21
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function responder(btn, msg) {
+            const container = btn.parentElement.parentElement;
+            container.querySelectorAll('.btn-check').forEach(b => b.classList.remove('ativo'));
+            btn.classList.add('ativo');
+            const fb = container.querySelector('.feedback');
+            fb.innerHTML = msg; fb.style.display = 'block';
+        }
+
+        function gerarPDF() {
+            const nome = document.getElementById('nomeUsuario').value;
+            if (!nome) { alert("Digite seu nome!"); return; }
+
+            document.getElementById('certNome').innerText = nome.toUpperCase();
+            document.getElementById('certNomeAssina').innerText = nome.toUpperCase();
+
+            const element = document.getElementById('area-certificado');
+            const opt = {
+                margin: 0,
+                filename: `Certificado_${nome}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+</html>

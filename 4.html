@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>3. Limpando o Espelho - Mulher de Valor</title>
+    <style>
+        :root { --primaria: #5d4037; --destaque: #c5a059; --fundo: #fdfaf6; --texto: #2c2c2c; --acento: #8d6e63; }
+        
+        /* Reset para travar o layout e impedir que o texto "dance" */
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        
+        body { 
+            background-color: var(--fundo); 
+            color: var(--texto); 
+            font-family: 'Optima', 'Candara', 'Segoe UI', serif; 
+            overflow-x: hidden; /* Trava o balanço lateral */
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+
+        .acessibilidade-bar { 
+            background: #fff; 
+            width: 100%; 
+            padding: 15px 0; 
+            display: flex; 
+            justify-content: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid #eee; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .btn-audio { 
+            background: none; 
+            border: 1px solid var(--destaque); 
+            padding: 10px 25px; 
+            cursor: pointer; 
+            color: var(--primaria); 
+            letter-spacing: 2px; 
+            font-size: 0.75rem; 
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .container { 
+            width: 100%; 
+            max-width: 900px; 
+            background: #fff; 
+            margin: 20px auto; 
+            padding: 60px 40px; /* Padding interno fixo */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+            border-top: 6px solid var(--primaria);
+        }
+
+        h1 { font-size: 1.7rem; letter-spacing: 3px; color: var(--primaria); text-align: center; text-transform: uppercase; margin-bottom: 10px; font-weight: 300; line-height: 1.2; }
+        .subtitulo { font-size: 0.95rem; color: var(--acento); text-align: center; font-style: italic; margin-bottom: 50px; display: block; letter-spacing: 1px; }
+
+        h2 { font-size: 1.25rem; color: var(--primaria); margin-top: 45px; border-bottom: 1px solid #f2f2f2; padding-bottom: 10px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
+
+        .conteudo { font-size: 1.15rem; text-align: justify; line-height: 1.9; color: #333; }
+        p { margin-bottom: 25px; }
+
+        .citacao-luxo { 
+            background: #fdfaf6; 
+            border-left: 3px solid var(--destaque); 
+            padding: 30px; 
+            margin: 40px 0; 
+            font-style: italic; 
+            font-size: 1.1rem;
+        }
+        .citacao-luxo a { color: var(--primaria); text-decoration: none; font-weight: bold; border-bottom: 1px solid var(--destaque); }
+
+        .insight-card { 
+            background: #fff; 
+            border: 1px solid #f0f0f0; 
+            padding: 30px; 
+            margin: 40px 0; 
+            border-radius: 2px; 
+            border-left: 4px solid var(--primaria); 
+            font-size: 1.1rem;
+        }
+
+        .link-wiki { color: var(--acento); text-decoration: none; border-bottom: 1px dotted var(--acento); }
+
+        footer { padding: 60px 20px; text-align: center; font-size: 0.75rem; color: #999; letter-spacing: 2px; text-transform: uppercase; width: 100%; }
+
+        .nav { display: flex; justify-content: space-between; margin-top: 60px; width: 100%; }
+        .btn-nav { color: var(--acento); text-decoration: none; font-size: 0.85rem; border: 1px solid #eee; padding: 12px 20px; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Ajustes Mobile para evitar instabilidade */
+        @media (max-width: 600px) {
+            .container { padding: 40px 20px; margin: 0; border-radius: 0; }
+            h1 { font-size: 1.4rem; }
+            .conteudo { font-size: 1.05rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="acessibilidade-bar">
+        <button id="btnOuvir" class="btn-audio" onclick="toggleAudio()">OUVIR NARRATIVA</button>
+    </div>
+
+    <div class="container">
+        <article id="artigo">
+            <h1>LIMPANDO O ESPELHO</h1>
+            <span class="subtitulo">Como silenciar as vozes críticas do passado.</span>
+            
+            <div class="conteudo">
+                <p>O espelho é um objeto implacável, mas ele só devolve o que encontra luz para refletir. A alma de muitas mulheres está coberta por uma "fuligem emocional" — camadas de críticas e rejeições que embaçaram a visão de quem elas realmente são. Limpar o espelho é um ato de <strong>guerra</strong> para retomar o território da sua identidade original.</p>
+
+                <h2>I. A Arqueologia das Vozes</h2>
+                <p>Muitas vezes, o que você chama de "autoestima baixa" é apenas o eco de vozes que não são suas. Na psicologia, o mecanismo de <a href="https://pt.wikipedia.org/wiki/Introje%C3%A7%C3%A3o" target="_blank" class="link-wiki">Introjeção</a> explica como aceitamos como verdade os rótulos de terceiros. Se a frase que ecoa na sua mente te diminui, identifique o dono: ela não é sua, é um resíduo de uma voz antiga que precisa ser silenciada pela Verdade presente.</p>
+
+                <div class="citacao-luxo">
+                    "Porque, se alguém é ouvinte da palavra, e não cumpridor, é semelhante ao homem que contempla no espelho o seu rosto natural; vai-se, e logo se esquece de como era." <br>
+                    <a href="https://www.bibliaonline.com.br/arc/tg/1/23-24" target="_blank">— Tiago 1:23-24</a>
+                </div>
+
+                <h2>II. O Polimento e a Samaritana</h2>
+                <p>Imagine a mulher samaritana (João 4). Ela carregava o embaço de cinco casamentos frustrados e a vergonha de um sexto relacionamento. Ela ia ao poço ao meio-dia para não ser vista. Jesus não apenas deu água; Ele poliu o espelho dela. Ele revelou quem ela era, apesar do que ela havia vivido. O valor dela foi restaurado ali, transformando uma fugitiva em uma influenciadora de cidades.</p>
+                
+                <p>Nos tempos bíblicos, os espelhos eram de bronze polido. Exigiam esforço diário para não oxidarem. A sua percepção mental é igual: se você não polir sua visão com a Palavra, a oxidação das <a href="https://pt.wikipedia.org/wiki/Cren%C3%A7a_limitante" target="_blank" class="link-wiki">Crenças Limitantes</a> voltará a escurecer seu futuro.</p>
+
+                <div class="insight-card">
+                    <strong>Ponto de Ruptura:</strong> A voz crítica sobrevive do silêncio. Quando você expõe essa mentira à luz — questionando sua origem — a névoa se dissipa. Limpar o espelho dói, pois exige que você encare sua história sem as máscaras do vitimismo.
+                </div>
+
+                <h2>III. A Glória de Rosto Descoberto</h2>
+                <p>A promessa para a Mulher de Valor não é viver sob um véu de vergonha, mas refletir a glória com clareza. Quando o espelho está limpo, você para de ver suas cicatrizes como defeitos e passa a vê-las como medalhas de sobrevivência. Esse é o ápice da <a href="https://pt.wikipedia.org/wiki/Psicologia_positiva" target="_blank" class="link-wiki">Psicologia Positiva</a> sob uma lente espiritual.</p>
+
+                <div class="citacao-luxo">
+                    "Mas todos nós, com cara descoberta, refletindo, como um espelho, a glória do Senhor, somos transformados na mesma imagem..." <br>
+                    <a href="https://www.bibliaonline.com.br/arc/2co/3/18" target="_blank">— 2 Coríntios 3:18</a>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a href="2.html" class="btn-nav">ANTERIOR</a>
+                <a href="5.html" class="btn-nav">PRÓXIMO</a>
+            </nav>
+        </article>
+    </div>
+
+    <footer>
+        FACULDADE TEOLÓGICA AVANCE<br>
+        SÉCULO 21 | ITANHANGÁ-MT | LEI 9.394/96
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
+    <script>
+        let falando = false;
+        let synthesis = window.speechSynthesis;
+        function toggleAudio() {
+            if (!falando) {
+                const texto = document.getElementById('artigo').innerText;
+                const msg = new SpeechSynthesisUtterance(texto);
+                msg.lang = 'pt-BR';
+                msg.onend = () => resetBtn();
+                synthesis.speak(msg);
+                document.getElementById('btnOuvir').innerHTML = "PARAR LEITURA";
+                falando = true;
+            } else { synthesis.cancel(); resetBtn(); }
+        }
+        function resetBtn() {
+            document.getElementById('btnOuvir').innerHTML = "OUVIR NARRATIVA";
+            falando = false;
+        }
+    </script>
+</body>
+</html>
