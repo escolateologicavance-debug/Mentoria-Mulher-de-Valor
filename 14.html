@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico e Certificado - Mulher de Valor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        :root { --primaria: #5d4037; --destaque: #c5a059; --fundo: #fdfaf6; --texto: #2c2c2c; --acento: #8d6e63; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--fundo); color: var(--texto); font-family: 'Optima', serif; padding: 20px; }
+        
+        .header-teste { text-align: center; margin-bottom: 40px; }
+        .header-teste h1 { color: var(--primaria); font-size: 1.8rem; letter-spacing: 2px; text-transform: uppercase; }
+        .header-teste p { color: var(--acento); font-style: italic; margin-top: 10px; }
+
+        .secao-pergunta { background: #fff; max-width: 700px; margin: 20px auto; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--destaque); }
+        .pergunta { font-size: 1.15rem; margin-bottom: 20px; color: var(--primaria); font-weight: bold; line-height: 1.4; }
+        .botoes { display: flex; gap: 15px; }
+        .btn-check { padding: 12px 30px; border: 1px solid var(--destaque); background: transparent; color: var(--primaria); cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; border-radius: 25px; min-width: 100px; }
+        .btn-check:hover { background: var(--destaque); color: #fff; }
+        .btn-check.ativo { background: var(--primaria); color: #fff; border-color: var(--primaria); }
+        .feedback { margin-top: 15px; font-style: italic; font-size: 0.95rem; color: var(--acento); display: none; padding: 10px; background: #fdfaf6; border-radius: 5px; }
+
+        .container-final { text-align: center; margin: 50px auto; max-width: 600px; padding: 40px; background: #fff; border-radius: 15px; border: 2px dashed var(--destaque); }
+        .input-nome { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-size: 1.1rem; text-align: center; margin-top: 15px; outline: none; transition: 0.3s; }
+        
+        .btn-gerar { display: block; width: 300px; margin: 30px auto; padding: 20px; background: var(--destaque); color: #fff; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; }
+    </style>
+</head>
+<body>
+
+    <div class="header-teste">
+        <h1>Diagnóstico de Governo</h1>
+        <p>Responda as 8 chaves para liberar sua certificação</p>
+    </div>
+
+    <div class="secao-pergunta"><div class="pergunta">1. Você consegue aceitar o favor e a prosperidade sem sentir que é uma "impostora"?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'O merecimento é a base bíblica para o transbordo.')">SIM</button><button class="btn-check" onclick="responder(this, 'Lembre-se: Você foi resgatada para reinar.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">2. Você identificou quais são as "válvulas de escape" que drenam sua energia hoje?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'Identificar é o primeiro passo para a blindagem.')">SIM</button><button class="btn-check" onclick="responder(this, 'Revisite a aula sobre o Tanque Emocional.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">3. O seu Kairós (tempo de Deus) tem tido primazia sobre o seu Chronos (rotina)?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'Quem governa o sagrado, governa o tempo.')">SIM</button><button class="btn-check" onclick="responder(this, 'Não deixe o urgente roubar o eterno.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">4. Você é capaz de dizer "não" a demandas externas sem sentir culpa?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'O seu NÃO protege o seu CHAMADO.')">SIM</button><button class="btn-check" onclick="responder(this, 'O medo de desagradar é um cárcere.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">5. Sua estrutura de caráter atual suportaria o peso do seu propósito daqui a 15 anos?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'Edifique a base para suportar o topo.')">SIM</button><button class="btn-check" onclick="responder(this, 'O preparo deve ser proporcional à promessa.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">6. Sua postura comunica a paz de Abigail ou a ansiedade das circunstâncias?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'Sua presença é sua primeira pregação.')">SIM</button><button class="btn-check" onclick="responder(this, 'Cultive o peso espiritual no secreto.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">7. Sua imagem externa (estética) está em harmonia com a mensagem do Reino (ética)?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'A vitrine deve honrar o estoque.')">SIM</button><button class="btn-check" onclick="responder(this, 'Ajuste sua sinalética visual.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="secao-pergunta"><div class="pergunta">8. Existe hoje alguém sendo levantado através do seu transbordo?</div>
+        <div class="botoes"><button class="btn-check" onclick="responder(this, 'Sucesso sem sucessor é fracasso.')">SIM</button><button class="btn-check" onclick="responder(this, 'O Mar Morto só recebe; você foi chamada para dar.')">NÃO</button></div><div class="feedback"></div></div>
+
+    <div class="container-final">
+        <strong style="color: var(--primaria); font-size: 1.2rem;">PARABÉNS PELA JORNADA!</strong><br><br>
+        <p>Insira seu nome completo para o certificado:</p>
+        <input type="text" id="nomeUsuario" class="input-nome" placeholder="Seu Nome Aqui">
+        <button class="btn-gerar" onclick="gerarPDF()">GERAR E BAIXAR CERTIFICADO</button>
+    </div>
+
+    <script>
+        function responder(btn, msg) {
+            const container = btn.parentElement.parentElement;
+            container.querySelectorAll('.btn-check').forEach(b => b.classList.remove('ativo'));
+            btn.classList.add('ativo');
+            const fb = container.querySelector('.feedback');
+            fb.innerHTML = msg; fb.style.display = 'block';
+        }
+
+        function gerarPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+            
+            const nome = document.getElementById('nomeUsuario').value.trim().toUpperCase();
+            if (!nome) {
+                alert("Por favor, digite seu nome completo.");
+                return;
+            }
+
+            const width = doc.internal.pageSize.getWidth();
+            const height = doc.internal.pageSize.getHeight();
+
+            const MARROM = [93, 64, 55]; 
+            const DOURADO = [197, 160, 89]; 
+            const TEXTO_ESCURO = [26, 26, 26];
+
+            doc.setDrawColor(MARROM[0], MARROM[1], MARROM[2]);
+            doc.setLineWidth(6);
+            doc.rect(5, 5, width - 10, height - 10); 
+
+            doc.setDrawColor(DOURADO[0], DOURADO[1], DOURADO[2]);
+            doc.setLineWidth(1);
+            doc.rect(12, 12, width - 24, height - 24);
+
+            doc.setTextColor(MARROM[0], MARROM[1], MARROM[2]);
+            doc.setFont("times", "bold");
+            doc.setFontSize(50);
+            doc.text("AVANCE", width / 2, 45, { align: "center", charSpace: 4 });
+
+            doc.setTextColor(DOURADO[0], DOURADO[1], DOURADO[2]);
+            doc.setFont("times", "italic");
+            doc.setFontSize(18);
+            doc.text('"Ultrapassando limites!"', width / 2, 55, { align: "center" });
+
+            doc.setTextColor(TEXTO_ESCURO[0], TEXTO_ESCURO[1], TEXTO_ESCURO[2]);
+            doc.setFont("times", "normal");
+            doc.setFontSize(18);
+            doc.text("Certificamos, para fins de governo e transbordo, que", width / 2, 80, { align: "center" });
+
+            doc.setTextColor(TEXTO_ESCURO[0], TEXTO_ESCURO[1], TEXTO_ESCURO[2]);
+            doc.setFont("times", "bold");
+            doc.setFontSize(36);
+            doc.text(nome, width / 2, 100, { align: "center" });
+            
+            doc.setDrawColor(220, 220, 220);
+            doc.setLineWidth(0.5);
+            doc.line(width / 2 - 80, 103, width / 2 + 80, 103);
+
+            doc.setTextColor(TEXTO_ESCURO[0], TEXTO_ESCURO[1], TEXTO_ESCURO[2]);
+            doc.setFont("times", "normal");
+            doc.setFontSize(18);
+            doc.text("concluiu com distinção a Mentoria", width / 2, 120, { align: "center" });
+            
+            doc.setTextColor(MARROM[0], MARROM[1], MARROM[2]);
+            doc.setFont("times", "bold");
+            doc.setFontSize(26);
+            doc.text("MULHER DE VALOR", width / 2, 135, { align: "center" });
+
+            doc.setTextColor(TEXTO_ESCURO[0], TEXTO_ESCURO[1], TEXTO_ESCURO[2]);
+            doc.setFontSize(14);
+            
+            doc.line(40, 160, 120, 160); 
+            doc.setFont("times", "bold");
+            doc.text("Gilberto Moreira", 80, 166, { align: "center" });
+            doc.setFont("times", "normal");
+            doc.text("Diretor Executivo", 80, 172, { align: "center" });
+
+            doc.line(width - 120, 160, width - 40, 160); 
+            doc.setFont("times", "bold");
+            doc.text(nome, width - 80, 166, { align: "center" });
+            doc.setFont("times", "normal");
+            doc.text("Participante", width - 80, 172, { align: "center" });
+
+            doc.setFontSize(9);
+            doc.setTextColor(120, 120, 120);
+            const rodape = "Faculdade Teológica AVANCE | Válido em todo território nacional conforme o Decreto Presidencial nº 5.154/04 e a Lei nº 9.394/96.";
+            doc.text(rodape, width / 2, 185, { align: "center" });
+            doc.text("Itanhangá-MT | Brasil | Século 21", width / 2, 190, { align: "center" });
+
+            const nomeArquivo = `Certificado_Mulher_de_Valor_${nome.replace(/\s+/g, '_')}.pdf`;
+            doc.save(nomeArquivo);
+        }
+    </script>
+</body>
+</html>
